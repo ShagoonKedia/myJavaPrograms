@@ -1,17 +1,27 @@
+import java.util.Scanner;
+
 public class PalindromeNumber {
     public static void main(String[] args) {
-        
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num == isPalin(num)){
+            System.out.println("yes");
+        }
+        System.out.println();
     }
 
-    public static boolean isPalin(int num){
+    public static int isPalin(int num){
 
-        int reverse = 0;
+        int rev = 0;
+        while(num != 0){
 
-        if(num<0){
-            return false;
+           rev = rev*10 + num%10;
+           num /= 10;
+
+        
         }
-
-        int digit = num % 10;
+        return rev;
+        
         
     }
 
