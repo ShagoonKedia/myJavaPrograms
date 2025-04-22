@@ -3,6 +3,11 @@ package LinkedList;
 public class LL {
 
     Node head;
+    private int size;
+
+    LL(){
+        this.size = 0;
+    }
     class Node{
 
         String data;
@@ -11,6 +16,7 @@ public class LL {
         Node(String data){
             this.data = data;
             this.next = null;
+            size++;
         }
 
     }
@@ -62,6 +68,48 @@ public class LL {
     }
 
 
+    // delete
+    public void deleteFirst(){
+        
+        if(head == null){
+            System.out.println(("list is empty"));
+            return;
+        }
+
+        size--;
+
+        head = head.next;
+    }
+
+    public void deleteLast(){
+        if(head == null){
+            System.out.println(("list is empty"));
+            return;
+        }
+        
+        size--;
+        if(head.next == null){  // when only one element is present in the list, make head as null
+            head = null;
+            return;
+        }
+
+        Node secondLast = head; // pointer for traversal
+        Node lastNode = head.next;
+
+        while(lastNode.next != null){  // traversing the list
+            lastNode.next = lastNode;
+            secondLast.next = secondLast;
+        }
+
+        secondLast.next = null;  // point second last node's next as null to delete last element from list 
+    }
+
+    public int getSize(){
+        return size;
+
+    }
+
+
 
 
     public static void main(String[] args) {
@@ -76,6 +124,10 @@ public class LL {
         list.addFirst("This");
         list.printList();
         
+        list.deleteFirst();
+        list.printList();
+
+        System.out.println(list.getSize());
     }
 
 }
