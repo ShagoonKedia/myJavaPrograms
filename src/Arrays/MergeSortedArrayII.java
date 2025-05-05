@@ -1,3 +1,5 @@
+
+// merge sorted arrays and place it in first array
 package Arrays;
 
 public class MergeSortedArrayII {
