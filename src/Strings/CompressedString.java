@@ -22,7 +22,7 @@ public class CompressedString {
             char ch = chars[read];   // current character being evaluated
             int count = 0;
 
-            while(read < chars.length && chars[read] == ch){  // until the consequent character is there
+            while(read < chars.length && chars[read] == ch){  // until the consicutive character is there
                 read++;
                 count++;
             }
