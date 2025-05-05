@@ -15,7 +15,7 @@ public class TrappingRainwater {
             return 0;
         }
 
-        int l = 0, r = height.length - 1;
+        int l = 0, r = height.length - 1;  // Two pointers approach
         int lmax = 0, rmax = 0;
         int water = 0;
 
