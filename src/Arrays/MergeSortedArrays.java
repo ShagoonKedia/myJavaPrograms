@@ -1,3 +1,5 @@
+// Merge Sorted Arrays into a third array arr3
+
 package Arrays;
 import java.util.Arrays;
 
