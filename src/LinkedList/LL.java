@@ -1,24 +1,64 @@
 package LinkedList;
 
+// OUTER CLASS - The LinkedList container
 public class LL {
 
-    Node head;
-    private int size;
+    // INSTANCE VARIABLES (Fields of the LL class)
+    
+    Node head;           // Reference to the first node in the linked list
+    private int size;    // Keeps track of how many elements are in the list
+    
+    /*
+     * WHY THESE VARIABLES?
+     * - head: Without this reference, we'd lose access to our entire list!
+     *         It's like the "entrance door" to our linked list.
+     * - size: Allows us to quickly know list length without counting every time
+     */
 
+    // CONSTRUCTOR - Called when we create a new LL object
     LL(){
-        this.size = 0;
+        this.size = 0;   // Initialize with zero elements
+        // Note: head is automatically null (default for object references)
     }
+    
+    /*
+     * CONSTRUCTOR EXPLANATION:
+     * - When you write: LL list = new LL();
+     * - This constructor runs and sets up an empty linked list
+     * - No parameters needed - we're creating an empty list
+     */
+
+    // INNER CLASS - Node represents individual elements
     class Node{
+        
+        // NODE INSTANCE VARIABLES
+        String data;     // The actual data this node stores
+        Node next;       // Reference pointing to the next node in the chain
+        
+        /*
+         * WHY String data?
+         * - Your implementation is specifically for String data
+         * - Could be made generic with <T> for any data type
+         * 
+         * WHY Node next?
+         * - This creates the "link" in our linked list
+         * - Each node points to the next one, forming a chain
+         * - Last node will have next = null (end of chain)
+         */
 
-        String data;
-        Node next;
-
+        // NODE CONSTRUCTOR - Called when creating a new node
         Node(String data){
-            this.data = data;
-            this.next = null;
-            size++;
+            this.data = data;    // Store the provided data
+            this.next = null;    // Initially, this node doesn't point anywhere
+            size++;              // Increment the outer class's size counter
         }
-
+        
+        /*
+         * CONSTRUCTOR PARAMETERS:
+         * - Takes String data: the value to store in this node
+         * - Automatically sets next to null (safe default)
+         * - Increments size: tracks total nodes in the list
+         */
     }
 
     // add -> addFirst, addLast
