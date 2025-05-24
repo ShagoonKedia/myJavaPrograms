@@ -52,6 +52,7 @@ public class LList {
     }
 
     public void printList(){
+        
         if(head == null){
             System.out.println("list is empty");
         }
@@ -62,6 +63,7 @@ public class LList {
         }
         System.out.print("NULL");
         System.out.println();
+        
 
     }
     public void deleteFirst(){
@@ -79,6 +81,10 @@ public class LList {
         secondLast.next = null;
     }
 
+    public int getSize(){
+        return size;
+    }
+
     public static void main(String[] args){
         LList list = new LList();
         list.addFirst("a");
@@ -93,8 +99,9 @@ public class LList {
         
         list.deleteFirst();
         list.printList();
+
+        System.out.println(list.getSize());
+
     }
-
-
 
 }
