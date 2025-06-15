@@ -1,3 +1,4 @@
+package Arrays;
 public class Selection {
     public static void main(String args[]){
         int arr[]  = {9,2,7,11,1,56,0};

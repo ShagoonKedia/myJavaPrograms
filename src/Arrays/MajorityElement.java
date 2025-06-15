@@ -13,7 +13,7 @@ If they oppose our candidate: remove 1 vote
 If votes reach 0, we choose the next person as our new candidate
 
 */
-
+package Arrays;
 public class MajorityElement {
     public static void main(String[] args) {
         
